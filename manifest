@@ -1,0 +1,21 @@
+#appname:Gift-Aid-O-Matic
+#appid:io.webcollective.giftaidomatic
+#publisher:webcollective
+#image:gift-aid-o-matic-icon.png
+#url:http://www.webcollective.io/
+#guid:66a70d2d-e323-42c8-9ba8-d007ae8df227
+#desc:No description provided
+#type:desktop
+runtime:1.3.1-beta
+app:1.3.1-beta
+codec:1.3.1-beta
+database:1.3.1-beta
+filesystem:1.3.1-beta
+media:1.3.1-beta
+monkey:1.3.1-beta
+network:1.3.1-beta
+platform:1.3.1-beta
+process:1.3.1-beta
+ui:1.3.1-beta
+worker:1.3.1-beta
+ruby:1.3.1-beta

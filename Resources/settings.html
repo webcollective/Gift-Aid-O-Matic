@@ -1,0 +1,147 @@
+<html><head>
+<style type="text/css">
+<!--
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
+  padding: 20px; 
+  padding-bottom:80px;
+  box-sizing: border-box;
+}
+body { font-family: 'Open Sans', Helvetica, sans-serif; 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2f2f2f), color-stop(100%,#1c1c1c)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #2f2f2f 0%,#1c1c1c 100%); /* Chrome10+,Safari5.1+ */
+background: linear-gradient(to bottom, #2f2f2f 0%,#1c1c1c 100%); /* W3C */
+background-attachment: fixed;
+color: #FFF;
+}
+.awesome, .awesome:visited {
+	font-family: 'Open Sans', Helvetica, sans-serif; 
+	font-weight: normal;
+	background: #404040 url(alert-overlay.png) repeat-x; 
+	display: inline-block; 
+	padding: 5px 10px 6px; 
+	color: #fff; 
+	text-decoration: none;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+	.awesome:hover							{ background-color: #444; color: #fff; }
+	.awesome:active							{ top: 1px; }
+	.small.awesome, .small.awesome:visited 			{ font-size: 11px; padding: ; }
+	.awesome, .awesome:visited,
+	.medium.awesome, .medium.awesome:visited 		{ font-size: 13px; font-weight: bold; line-height: 1; text-shadow: 0 -1px 1px rgba(0,0,0,0.25); }
+	.large.awesome, .large.awesome:visited 			{ font-size: 14px; padding: 8px 14px 9px; }
+	
+	.green.awesome, .green.awesome:visited		{ background-color: #91bd09; }
+	.green.awesome:hover						{ background-color: #749a02; }
+	.blue.awesome, .blue.awesome:visited		{ background-color: #2daebf; }
+	.blue.awesome:hover							{ background-color: #46c3d3; }
+	.red.awesome, .red.awesome:visited			{ background-color: #e33100; }
+	.red.awesome:hover							{ background-color: #872300; }
+	.magenta.awesome, .magenta.awesome:visited		{ background-color: #a9014b; }
+	.magenta.awesome:hover							{ background-color: #630030; }
+	.orange.awesome, .orange.awesome:visited		{ background-color: #f05700; }
+	.orange.awesome:hover							{ background-color: #ff5c00; }
+	.yellow.awesome, .yellow.awesome:visited		{ background-color: #ffb515; }
+	.yellow.awesome:hover							{ background-color: #fc9200; }
+	h1 { font-size: 40px; text-align: center; font-weight: 100; margin-top: 0; margin-bottom: 20px;}
+	h2 { font-size: 30px; text-align: center; font-weight: 100; margin-bottom: 30px; }
+	.centered { text-align: center;}
+
+	#settings { }
+	.right-column { width: 45%; float: right;}
+	.left-column { width: 45%; float: left;}
+	#settings label { display: block; font-size: 12px; color: #CCC; margin-top: 12px;}
+	#settings input, #settings select { display: block; width: 100%; background-color: #555; color: #FFF; border-color: #444 #666 #666 #444; border-width: 1px; padding: 6px; font-size: 12px;}
+	.clearfix:after {
+            content:"";
+            display:table;
+            clear:both;
+        }
+        	input { font-family: 'Open Sans';}
+
+
+-->
+</style>
+</head>
+<body>
+<div id="settings">
+<div class="centered">
+	<h1>Settings</h1>
+</div>
+<div class="left-column">
+	<label>Charities Online username</label>
+	<input id="settingsSenderID" name="senderID" placeholder="e.g. 323412300001" type="text">
+	<label>HMRC Charities reference</label>
+	<input id="settingsHmrcRef" name="hmrcRef" placeholder="e.g. AB12345" maxlength="7" type="text">
+	<label>Organization name</label>
+	<input id="settingsOrgName" name="orgName" placeholder="e.g. My Charity" maxlength="160" type="text">
+	<label>Regulator</label>
+	<select id="settingsRegulator" name="regulator">
+		<option value="none">None</option>
+		<option value="CCEW">Charity Commission for England and Wales</option>
+		<option value="CCNI">Charity Commission for Northern Ireland</option>
+		<option value="OSCR">Office of the Scottish Charity Regulator</option>
+	</select>
+	<label>Registration number</label>
+	<input id="settingsRegNum" name="regNum" placeholder="e.g. 123456" maxlength="20" type="text">
+</div>
+<div class="right-column">
+	<label>'Authorized official' name</label>
+	<input id="settingsAuthOfficialFirstName" name="authOfficialFirstName" placeholder="First Name, e.g. John" maxlength="35" type="text">
+	<input id="settingsAuthOfficialLastName" name="authOfficialLastName" placeholder="Last Name, e.g. Smith" maxlength="35" type="text">
+	<label>'Authorized official' postcode</label>
+	<input id="settingsAuthOfficialPostcode" name="authOfficialPostcode" placeholder="e.g. AB12 3CD" type="text">
+	<label>'Authorized official' phone number</label>
+	<input id="settingsAuthOfficialPhone" name="authOfficialPhone" placeholder="e.g. 01234 567890" maxlength="30" type="text">
+	<!--<label>Preview how many rows?</label>
+	<input id="settingsPreviewRowsAll" name="previewRows" type="radio" value="all" style="display: inline-block; width: auto;"> <label style="width: auto; display: inline-block; margin-top: 0;" for="settingsPreviewRowsAll">All of them</label> &nbsp;&nbsp;<input id="settingsPreviewRows1000" style="display: inline-block; width: auto;" name="previewRows" type="radio" value="1000"> <label style="width: auto; display: inline-block; margin-top: 0" for="settingsPreviewRows1000">1,000</label>-->
+</div>
+<div class="clearfix"></div>
+<div class="centered" style="clear: both; margin-top: 30px;">
+	<button id="saveSettingsButton" class="large awesome">Save</button>
+</div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="settings.js"></script> 
+</body>
+</html>

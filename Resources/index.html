@@ -1,0 +1,175 @@
+<html><head>
+<style type="text/css">
+<!--
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
+  padding: 30px; 
+  padding-bottom:80px;
+  box-sizing: border-box;
+}
+body { font-family: 'Open Sans', Helvetica, sans-serif; 
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2f2f2f), color-stop(100%,#1c1c1c)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #2f2f2f 0%,#1c1c1c 100%); /* Chrome10+,Safari5.1+ */
+background: linear-gradient(to bottom, #2f2f2f 0%,#1c1c1c 100%); /* W3C */
+background-attachment: fixed;
+}
+.awesome, .awesome:visited {
+	font-family: 'Open Sans', Helvetica, sans-serif; 
+	font-weight: 600 !important;
+	background: #404040 url(alert-overlay.png) repeat-x; 
+	display: inline-block; 
+	padding: 5px 10px 6px; 
+	color: #fff; 
+	text-decoration: none;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+	input { font-family: 'Open Sans';}
+	.awesome:hover							{ background-color: #444; color: #fff; }
+	.awesome:active							{ top: 1px; }
+	.small.awesome, .small.awesome:visited 			{ font-size: 11px; padding: ; }
+	.awesome, .awesome:visited,
+	.medium.awesome, .medium.awesome:visited 		{ font-size: 13px; font-weight: bold; line-height: 1; text-shadow: 0 -1px 1px rgba(0,0,0,0.25); }
+	.large.awesome, .large.awesome:visited 			{ font-size: 14px; padding: 8px 14px 9px; }
+	
+	.green.awesome, .green.awesome:visited		{ background-color: #91bd09; }
+	.green.awesome:hover						{ background-color: #749a02; }
+	.blue.awesome, .blue.awesome:visited		{ background-color: #2daebf; }
+	.blue.awesome:hover							{ background-color: #46c3d3; }
+	.red.awesome, .red.awesome:visited			{ background-color: #e33100; }
+	.red.awesome:hover							{ background-color: #872300; }
+	.magenta.awesome, .magenta.awesome:visited		{ background-color: #a9014b; }
+	.magenta.awesome:hover							{ background-color: #630030; }
+	.orange.awesome, .orange.awesome:visited		{ background-color: #f05700; }
+	.orange.awesome:hover							{ background-color: #ff5c00; }
+	.yellow.awesome, .yellow.awesome:visited		{ background-color: #ffb515; }
+	.yellow.awesome:hover							{ background-color: #fc9200; }
+
+	#loadFileButton, #settingsButton  { font-size: 25px; font-family: 'Open Sans', Helvetica, sans-serif; margin-top: 20px; margin-bottom: 10px; padding: 8px 14px 10px;}
+	#submitButton, #saveSubmissionButton, #saveErrorResponseButton, #saveReceiptButton { font-size: 20px; font-family: 'Open Sans', Helvetica, sans-serif; margin-bottom: 20px;}
+	#progress { font-weight: 100; text-align: center; font-size: 30px; margin-bottom: 30px; margin-top: 20px; text-shadow: -1px 0px 0px rgba(0, 0, 0, 1);}
+	#preview { display: none; }
+	#loading, #submitting, #success, #errors { display: none; z-index: 100; padding-bottom: 20px;}
+	#index { padding-top: 15%;}
+	#loading, #submitting { padding-top: 25%; }
+	#success { padding-top: 15%;}
+	#errors { padding-top: 0;}
+	#errors ul#errorList { font-size: 18px; text-align: left; margin: 40px; }
+	#errors ul#errorList li { margin-bottom: 15px;}
+	#errors ul#errorList small { font-size: 10px; font-weight: 200; color: #CCC;}
+	#openHelp { text-shadow: -1px 0px 0px rgba(0, 0, 0, 1); color: #CCC; cursor: pointer;display: block; font-weight: 100; font-size: 16px; text-decoration: none;}
+	#openHelp:hover { color: #FFF;}
+	h1 { font-size: 40px; text-align: center; font-weight: 100;}
+	h1 sup { font-size: 30px;}
+	h2 { font-size: 30px; text-align: center; font-weight: 100; margin-bottom: 30px; }
+	.centered { text-align: center;}
+	#adjustment { display: none;}
+	#adjustment input, #adjustment textarea { background-color: #555; color: #FFF; border-color: #444 #666 #666 #444; border-width: 1px; padding: 6px; font-size: 12px; }
+	#adjustment input { margin-top: 0;}
+	#adjustment textarea { position: relative; top: 14px;}
+	#adjustment span { margin-top: 0;}
+-->
+</style>
+<link rel="stylesheet" href="tipsy.css" type="text/css" />
+</head><body style="margin:0; color: #FFF;">
+<div id="loading">
+	<h2>Just a moment...</h2>
+</div>
+<div id="submitting">
+	<h2><img src="spinner.gif" style="position:relative; top: 5px; margin-right: 10px;"/> Submitting to HMRC</h2>
+</div>
+
+<div id="success">
+	<h2><img src="success.png"  style="position:relative; top: 20px; margin-right: 10px;"/> Your submission was accepted!</h2>
+	<div class="centered">
+		<button id="saveReceiptButton" class="large awesome">Save a copy of your receipt</button>
+	</div>
+	<textarea id="receipt" style="display: none;"></textarea>
+</div>
+
+<div id="errors">
+	<h2><img src="error.png"  style="position:relative; top: 20px; margin-right: 10px;" /> Your submission was rejected:</h2>
+	<ul id="errorList">
+	</ul>
+	<div class="centered">
+	<button id="saveErrorResponseButton" class="large awesome">Save a copy of HMRC&apos;s response</button>
+	</div>
+	<textarea id="errorResponse" style="display: none;"></textarea>
+</div>
+
+
+<div id="index" class="centered">
+	<h1 style="text-align: center; margin-bottom: 0">Gift-Aid-O-Matic<sup>™</sup></h1>
+	<button id="settingsButton" class="large awesome" title="Before we get started, let's enter your organisation's details">Settings</button> <button id="loadFileButton" class="large blue awesome">Open CSV file</button><a id="openHelp" target="_blank" href="http://webcollective.io/gift-aid#format">What format should my file be in?</a>
+</div>
+
+<div id="preview">
+	<div class="centered">
+		<button id="saveSubmissionButton" class="large awesome">Save a copy of the submission</button> <button id="submitButton" class="large orange awesome">Submit to HMRC</button>
+
+		<div id="adjustment" style="font-weight: 100;"><span style="font-size: 24px;">£<input type="text" id="adjustmentAmount" placeholder = "e.g. 50.00" style="font-size: 24px; font-weight: 100;  width: 5.5em;" /></span> <textarea id="adjustmentExplanation" placeholder="Explanation for adjustment" style="width: 40%; height: 4em;"></textarea> <button id="removeAdjustmentButton" class="awesome">Remove adjustment</button></div>
+		<div id="addAdjustment"><button id="addAdjustmentButton" class="awesome">Add adjustment</button></div>
+
+		<div id="progress"></div>
+	</div>
+	<table id="previewTable" style="width: 100%; font-weight: 200; font-size: 14px;">
+	<thead>
+		<tr style="text-align: left;">
+		<th>First name</th>
+		<th>Last name</th>
+		<th>Address</th>
+		<th>Postcode</th>
+		<th>Amount</th>
+		<th>Date</th>
+		</tr>
+	</thead>
+	<tbody id="previewTableBody">
+	</tbody>
+	</table>
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-csv.js"></script>
+<script type='text/javascript' src='js/jquery.tipsy.js'></script>
+<script type="text/javascript" src="submission_builder.js"/>
+<script type="text/javascript" src="app.js"></script> 
+<script type="text/ruby" src="ruby/digest.rb"/>
+<script type="text/ruby" src="ruby/submission_builder.rb"/>
+</body></html>
