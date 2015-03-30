@@ -1,3 +1,6 @@
+## IMPORTANT - April 2015
+# HMRC have changed the format that they require submissions in, and this app has not been updated (yet). You cannot use it for submitting claims at present.
+
 Gift-Aid-O-Matic
 ================
 
